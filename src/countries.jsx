@@ -1,16 +1,10 @@
 import React from "react";
 import  "./countries.css";
+import CountriesCard from "./countriesCrad";
 import { useEffect, useState } from "react";
 
 
-const CountriesCard = ({flag, abbr, name}) => {
-    return(
-        <div className="countryCard">
-            <img src={flag} alt={`Flag of ${abbr}`} className="card-img"/>
-            <h2>{name}</h2>        
-        </div>
-    )
-}
+
 
 
 
