@@ -4,7 +4,7 @@ import "./countriesCard.css";
 const CountriesCard = ({flag, name}) => {
     return(
         <div className="countryCard">
-            <img src={flag} alt={`Flag of : ${name}`} className="card-img"/>
+            <img src={flag} alt={name} className="card-img"/>
             <h2>{name}</h2>        
         </div>
     )
