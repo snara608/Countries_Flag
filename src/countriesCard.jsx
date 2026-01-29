@@ -1,9 +1,9 @@
 import React from "react";
 
-const CountriesCard = ({flag, abbr, name}) => {
+const CountriesCard = ({flag, name}) => {
     return(
         <div className="countryCard">
-            <img src={flag} alt={`Flag of ${abbr}`} className="card-img"/>
+            <img src={flag} alt={name} className="card-img"/>
             <h2>{name}</h2>        
         </div>
     )

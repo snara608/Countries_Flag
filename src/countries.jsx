@@ -1,6 +1,6 @@
 import React from "react";
 import  "./countries.css";
-import CountriesCard from "./countriesCrad";
+import CountriesCard from "./countriesCard";
 import { useEffect, useState } from "react";
 
 
@@ -18,9 +18,8 @@ function Countries() {
             const res = await fetch("https://xcountries-backend.labs.crio.do/all");
             const data = await res.json();
             setCountries(data);
-            } catch(error){
+            } catch (error){
                 console.error("error fetching data", error);
-                return[];
             }
         }
     
@@ -31,7 +30,7 @@ function Countries() {
     return (
         <div className="mainCard"> 
             {countries.map((item) => (  
-            <CountriesCard name={item.name} abbr={item.abbr} flag={item.flag}/>
+            <CountriesCard key={item.name} name={item.name} flag={item.flag}/>
             ))}
         </div>
     )
