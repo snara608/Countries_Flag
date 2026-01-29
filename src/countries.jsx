@@ -9,13 +9,13 @@ function Countries() {
 
     useEffect(() => {
    
-        const fetchData = async() => {
-            try{
-            const res = await fetch("https://xcountries-backend.labs.crio.do/all");
-            const data = await res.json();
-            setCountries(data);
-            } catch (error){
-                console.error("Error fetching data: ", error)
+        const fetchData = async () => {
+            try {
+                const res = await fetch("https://xcountries-backend.labs.crio.do/all");
+                const data = await res.json();
+                setCountries(data);
+            } catch (error) {
+                console.error("Error fetching data: " + error);
             }
         }
     
