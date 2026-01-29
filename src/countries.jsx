@@ -12,13 +12,10 @@ function Countries() {
         const fetchData = async() => {
             try{
             const res = await fetch("https://xcountries-backend.labs.crio.do/all");
-            if (!res.ok) {
-                throw new Error(`HTTP error! status: ${res.status}`);
-            }
             const data = await res.json();
             setCountries(data);
             } catch (error){
-                console.error("Error fetching data: ", error)
+                console.error("Error fetching data: " + error.message)
             }
         }
     
