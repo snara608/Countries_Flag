@@ -4,10 +4,6 @@ import CountriesCard from "./countriesCard";
 import { useEffect, useState } from "react";
 
 
-
-
-
-
 function Countries() {
     const [countries, setCountries] = useState([]);
 
@@ -16,10 +12,13 @@ function Countries() {
         const fetchData = async() => {
             try{
             const res = await fetch("https://xcountries-backend.labs.crio.do/all");
+            if (!res.ok) {
+                throw new Error(`HTTP error! status: ${res.status}`);
+            }
             const data = await res.json();
             setCountries(data);
             } catch (error){
-                console.error("error fetching data", error);
+                console.error("Error fetching data: ", error)
             }
         }
     
